@@ -1,6 +1,6 @@
 ---
 name: claude-skill-up
-description: Gamified Claude Code command discovery. Daily quests, XP, streaks, and achievements that teach you the /commands you've been missing. Use when user types /skill-up, asks about their progress, or wants to see what Claude Code commands they haven't tried yet.
+description: Gamified Claude Code command discovery. ALWAYS run the dashboard bash command immediately every time the user invokes /claude-skill-up — do not skip, do not summarize from memory, always re-execute. Also handles /claude-skill-up:status, /claude-skill-up:share, /claude-skill-up:history.
 user_invocable: true
 license: MIT
 metadata:
@@ -13,21 +13,19 @@ metadata:
 
 Gamified discovery of Claude Code's /commands. Daily quests, XP, streaks, and achievements that teach you what you've been missing.
 
+**IMPORTANT**: Every invocation of any `/claude-skill-up` command MUST re-run the corresponding bash command fresh. Never use cached output from a previous run — the state file changes between calls (quests get completed, XP changes). Always execute the bash command and display the live output.
+
 ## Commands
 
 ### `/claude-skill-up` — Today's Quests
 
-Show today's 3 quests and current progress. Run this command:
+ALWAYS run this bash command immediately, every single time:
 
 ```bash
 source "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/claude-skill-up/lib/engine.sh" && init_state && render_dashboard
 ```
 
-Display the output directly to the user. The dashboard shows:
-- Current level and XP with progress bar
-- Streak count
-- Today's 3 quests with completion status ([x] done, [ ] pending)
-- Hints for incomplete quests
+Display the raw output directly to the user. Never skip this step or show previous output. The dashboard reads live from state.json each time so it always reflects current progress.
 
 ### `/claude-skill-up:status` — Full Dashboard
 
