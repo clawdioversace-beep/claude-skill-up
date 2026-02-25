@@ -6,6 +6,9 @@ set -euo pipefail
 
 CLAUDE_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 SKILL_INSTALL_DIR="$CLAUDE_DIR/skills/claude-skill-up"
+SKILL_INSTALL_DIR_STATUS="$CLAUDE_DIR/skills/claude-skill-up-status"
+SKILL_INSTALL_DIR_SHARE="$CLAUDE_DIR/skills/claude-skill-up-share"
+SKILL_INSTALL_DIR_HISTORY="$CLAUDE_DIR/skills/claude-skill-up-history"
 HOOK_INSTALL_DIR="$CLAUDE_DIR/hooks/claude-skill-up"
 SETTINGS_FILE="$CLAUDE_DIR/settings.json"
 
@@ -57,15 +60,22 @@ fi
 # Create directories
 echo -e "${YELLOW}Creating directories...${NC}"
 mkdir -p "$SKILL_INSTALL_DIR"
+mkdir -p "$SKILL_INSTALL_DIR_STATUS"
+mkdir -p "$SKILL_INSTALL_DIR_SHARE"
+mkdir -p "$SKILL_INSTALL_DIR_HISTORY"
 mkdir -p "$HOOK_INSTALL_DIR/data"
 mkdir -p "$HOOK_INSTALL_DIR/lib"
 
 # Copy files
 echo -e "${YELLOW}Copying files...${NC}"
 cp "$SOURCE_DIR/skills/claude-skill-up/SKILL.md" "$SKILL_INSTALL_DIR/SKILL.md"
+cp "$SOURCE_DIR/skills/claude-skill-up-status/SKILL.md" "$SKILL_INSTALL_DIR_STATUS/SKILL.md"
+cp "$SOURCE_DIR/skills/claude-skill-up-share/SKILL.md" "$SKILL_INSTALL_DIR_SHARE/SKILL.md"
+cp "$SOURCE_DIR/skills/claude-skill-up-history/SKILL.md" "$SKILL_INSTALL_DIR_HISTORY/SKILL.md"
 cp "$SOURCE_DIR/hooks/tracker.sh" "$HOOK_INSTALL_DIR/tracker.sh"
 cp "$SOURCE_DIR/hooks/session-start.sh" "$HOOK_INSTALL_DIR/session-start.sh"
 cp "$SOURCE_DIR/hooks/session-end.sh" "$HOOK_INSTALL_DIR/session-end.sh"
+cp "$SOURCE_DIR/hooks/precompact.sh" "$HOOK_INSTALL_DIR/precompact.sh"
 cp "$SOURCE_DIR/data/quests.json" "$HOOK_INSTALL_DIR/data/quests.json"
 cp "$SOURCE_DIR/data/achievements.json" "$HOOK_INSTALL_DIR/data/achievements.json"
 cp "$SOURCE_DIR/lib/engine.sh" "$HOOK_INSTALL_DIR/lib/engine.sh"
@@ -74,6 +84,7 @@ cp "$SOURCE_DIR/lib/engine.sh" "$HOOK_INSTALL_DIR/lib/engine.sh"
 chmod +x "$HOOK_INSTALL_DIR/tracker.sh"
 chmod +x "$HOOK_INSTALL_DIR/session-start.sh"
 chmod +x "$HOOK_INSTALL_DIR/session-end.sh"
+chmod +x "$HOOK_INSTALL_DIR/precompact.sh"
 chmod +x "$HOOK_INSTALL_DIR/lib/engine.sh"
 
 # Register hooks in settings.json
@@ -98,10 +109,17 @@ register_hooks() {
     ' "$SETTINGS_FILE" > "$tmp" && mv "$tmp" "$SETTINGS_FILE"
     tmp=$(mktemp)
 
-    # Add UserPromptSubmit hook
+    # Add UserPromptSubmit hook (sync — needs to read stdin)
     jq --arg cmd "$HOOK_INSTALL_DIR/tracker.sh" '
       .hooks.UserPromptSubmit = (.hooks.UserPromptSubmit // []) +
-      [{"matcher": "", "hooks": [{"type": "command", "command": $cmd, "timeout": 10, "async": true}]}]
+      [{"matcher": "", "hooks": [{"type": "command", "command": $cmd, "timeout": 10}]}]
+    ' "$SETTINGS_FILE" > "$tmp" && mv "$tmp" "$SETTINGS_FILE"
+    tmp=$(mktemp)
+
+    # Add PreCompact hook (tracks /compact usage)
+    jq --arg cmd "$HOOK_INSTALL_DIR/precompact.sh" '
+      .hooks.PreCompact = (.hooks.PreCompact // []) +
+      [{"matcher": "", "hooks": [{"type": "command", "command": $cmd, "timeout": 10}]}]
     ' "$SETTINGS_FILE" > "$tmp" && mv "$tmp" "$SETTINGS_FILE"
     tmp=$(mktemp)
 
@@ -161,8 +179,8 @@ echo -e "${GREEN}  ╔═══════════════════�
 echo -e "${GREEN}  ║    Installation complete!            ║${NC}"
 echo -e "${GREEN}  ╠══════════════════════════════════════╣${NC}"
 echo -e "${GREEN}  ║                                      ║${NC}"
-echo -e "${GREEN}  ║  Restart Claude Code, then type:     ║${NC}"
-echo -e "${GREEN}  ║    /skill-up  — see today's quests   ║${NC}"
+echo -e "${GREEN}  ║  Restart Claude Code, then type:        ║${NC}"
+echo -e "${GREEN}  ║    /claude-skill-up  — today's quests  ║${NC}"
 echo -e "${GREEN}  ║                                      ║${NC}"
 echo -e "${GREEN}  ║  You're using 20% of Claude Code.    ║${NC}"
 echo -e "${GREEN}  ║  This skill shows you the other 80%. ║${NC}"
