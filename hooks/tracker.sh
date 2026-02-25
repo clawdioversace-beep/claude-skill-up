@@ -12,10 +12,8 @@ SKILL_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/claude-skill-up"
 source "$SKILL_DIR/lib/engine.sh"
 
 # Read user input from stdin (Claude Code pipes it as JSON)
-INPUT=""
-if [[ -p /dev/stdin ]]; then
-  INPUT=$(cat)
-fi
+# Note: [[ -p /dev/stdin ]] fails for async hooks — read unconditionally
+INPUT=$(cat 2>/dev/null || true)
 
 # Extract the user's prompt from the hook payload
 # Claude Code sends JSON: {"sessionId":"...","prompt":"..."}

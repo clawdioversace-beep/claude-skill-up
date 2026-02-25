@@ -11,7 +11,7 @@
           "title": "Fresh Start",
           "description": "Clear your conversation to start fresh",
           "xp": 50,
-          "hint": "Type /clear when your context feels cluttered"
+          "hint": "Run /clear in Claude Code, then type 'done /clear' here to confirm"
         },
         {
           "id": "compact-context",
@@ -27,7 +27,7 @@
           "title": "RTFM",
           "description": "Open the help menu to see all available commands",
           "xp": 25,
-          "hint": "Type /help to see what's possible"
+          "hint": "Run /help in Claude Code, then type 'done /help' here to confirm"
         },
         {
           "id": "check-status",
@@ -35,7 +35,7 @@
           "title": "System Check",
           "description": "Check your current session status",
           "xp": 50,
-          "hint": "Type /status to see model, context usage, and more"
+          "hint": "Run /status in Claude Code, then type 'done /status' here to confirm"
         },
         {
           "id": "use-vim-mode",
@@ -43,7 +43,7 @@
           "title": "Vim Wizard",
           "description": "Toggle vim keybindings in the input",
           "xp": 75,
-          "hint": "Type /vim if you're a vim user"
+          "hint": "Run /vim in Claude Code, then type 'done /vim' here to confirm"
         },
         {
           "id": "check-cost",
@@ -51,7 +51,7 @@
           "title": "Cost Conscious",
           "description": "Check how much this session has cost",
           "xp": 50,
-          "hint": "Type /cost to see token usage and estimated cost"
+          "hint": "Run /cost in Claude Code, then type 'done /cost' here to confirm"
         }
       ]
     },
@@ -65,7 +65,7 @@
           "title": "Multiverse",
           "description": "Fork your conversation to explore a different path",
           "xp": 100,
-          "hint": "Type /fork to branch off without losing your current context"
+          "hint": "Run /fork in Claude Code, then type 'done /fork' here to confirm"
         },
         {
           "id": "use-memory",
@@ -73,7 +73,7 @@
           "title": "Memory Lane",
           "description": "View or manage Claude's project memory",
           "xp": 100,
-          "hint": "Type /memory to see what Claude remembers about your project"
+          "hint": "Run /memory in Claude Code, then type 'done /memory' here to confirm"
         },
         {
           "id": "review-code",
@@ -81,7 +81,7 @@
           "title": "Code Reviewer",
           "description": "Ask Claude to review recent changes",
           "xp": 100,
-          "hint": "Type /review to get a code review of your staged changes"
+          "hint": "Run /review in Claude Code, then type 'done /review' here to confirm"
         },
         {
           "id": "init-project",
@@ -89,7 +89,7 @@
           "title": "Project Genesis",
           "description": "Initialize Claude for a new project",
           "xp": 100,
-          "hint": "Type /init in a new project to set up CLAUDE.md"
+          "hint": "Run /init in a new project, then type 'done /init' here to confirm"
         },
         {
           "id": "use-resume",
@@ -97,7 +97,7 @@
           "title": "Continue Mission",
           "description": "Resume a previous conversation",
           "xp": 75,
-          "hint": "Type /resume to pick up where you left off"
+          "hint": "Run /resume in Claude Code, then type 'done /resume' here to confirm"
         },
         {
           "id": "switch-model",
@@ -105,7 +105,7 @@
           "title": "Model Swapper",
           "description": "Switch between Claude models mid-conversation",
           "xp": 100,
-          "hint": "Type /model to switch between Haiku, Sonnet, and Opus"
+          "hint": "Run /model in Claude Code, then type 'done /model' here to confirm"
         }
       ]
     },
@@ -119,7 +119,7 @@
           "title": "Plugin Hunter",
           "description": "Install a plugin to extend Claude's capabilities",
           "xp": 150,
-          "hint": "Type /install to add MCP servers, skills, or plugins"
+          "hint": "Run /install in Claude Code, then type 'done /install' here to confirm"
         },
         {
           "id": "use-permissions",
@@ -127,7 +127,7 @@
           "title": "Gatekeeper",
           "description": "View or modify tool permissions",
           "xp": 150,
-          "hint": "Type /permissions to control what Claude can access"
+          "hint": "Run /permissions in Claude Code, then type 'done /permissions' here to confirm"
         },
         {
           "id": "use-fast-mode",
@@ -135,7 +135,7 @@
           "title": "Speed Demon",
           "description": "Toggle fast mode for quicker responses",
           "xp": 100,
-          "hint": "Type /fast to toggle faster output from Claude"
+          "hint": "Run /fast in Claude Code, then type 'done /fast' here to confirm"
         },
         {
           "id": "use-terminal-mode",
@@ -143,7 +143,7 @@
           "title": "Terminal Tuner",
           "description": "Configure terminal integration settings",
           "xp": 150,
-          "hint": "Type /terminal-setup to optimize your terminal for Claude"
+          "hint": "Run /terminal-setup in Claude Code, then type 'done /terminal-setup' here to confirm"
         },
         {
           "id": "use-config",
@@ -151,7 +151,7 @@
           "title": "Config Master",
           "description": "Open Claude Code configuration",
           "xp": 125,
-          "hint": "Type /config to customize Claude Code behavior"
+          "hint": "Run /config in Claude Code, then type 'done /config' here to confirm"
         },
         {
           "id": "use-logout",
@@ -159,7 +159,7 @@
           "title": "Identity Check",
           "description": "Check or switch your authentication",
           "xp": 75,
-          "hint": "Type /logout to manage your Claude authentication"
+          "hint": "Run /logout in Claude Code, then type 'done /logout' here to confirm"
         }
       ]
     },

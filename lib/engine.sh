@@ -277,9 +277,12 @@ for qid in pool[:3]:
 
 detect_command() {
   local input="$1"
-  # Extract the /command from user input
-  if [[ "$input" =~ ^/([a-zA-Z_-]+) ]]; then
+  # Primary: skill invocation at start of message (e.g., /claude-skill-up:status)
+  if [[ "$input" =~ ^/([a-zA-Z_:-]+) ]]; then
     echo "/${BASH_REMATCH[1]}"
+  # Secondary: /command mentioned anywhere — lets users type "done /clear" or "used /help" to confirm
+  elif [[ "$input" =~ (^|[[:space:]])/([a-zA-Z_-]+) ]]; then
+    echo "/${BASH_REMATCH[2]}"
   fi
 }
 
