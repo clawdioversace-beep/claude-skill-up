@@ -18,10 +18,10 @@ Then restart Claude Code and type `/skill-up`.
 
 | Command | What it does |
 |---------|-------------|
-| `/skill-up` | Today's 3 quests + progress |
-| `/skill-up:status` | Full dashboard with achievements |
-| `/skill-up:share` | Shareable ASCII stat card |
-| `/skill-up:history` | Command usage stats + completed quests |
+| `/claude-skill-up` | Today's 3 quests + progress |
+| `/claude-skill-up:status` | Full dashboard with achievements |
+| `/claude-skill-up:share` | Shareable ASCII stat card |
+| `/claude-skill-up:history` | Command usage stats + completed quests |
 
 ## How It Works
 

@@ -15,7 +15,7 @@ Gamified discovery of Claude Code's /commands. Daily quests, XP, streaks, and ac
 
 ## Commands
 
-### `/skill-up` — Today's Quests
+### `/claude-skill-up` — Today's Quests
 
 Show today's 3 quests and current progress. Run this command:
 
@@ -29,7 +29,7 @@ Display the output directly to the user. The dashboard shows:
 - Today's 3 quests with completion status ([x] done, [ ] pending)
 - Hints for incomplete quests
 
-### `/skill-up:status` — Full Dashboard
+### `/claude-skill-up:status` — Full Dashboard
 
 Show comprehensive stats including achievements. Run:
 
@@ -49,7 +49,7 @@ Show the dashboard output, then list any achievements. Include:
 - All unlocked achievements with titles
 - Next achievement the user is closest to
 
-### `/skill-up:share` — Shareable Stat Card
+### `/claude-skill-up:share` — Shareable Stat Card
 
 Generate an ASCII stat card the user can copy and share. Run:
 
@@ -59,7 +59,7 @@ source "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hooks/claude-skill-up/lib/engine.sh"
 
 Display the card in a code block so the user can easily copy it.
 
-### `/skill-up:history` — Command Usage History
+### `/claude-skill-up:history` — Command Usage History
 
 Show the user's command usage stats and completed quests. Run:
 
