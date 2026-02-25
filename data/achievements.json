@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "achievements": [
+    {
+      "id": "first-quest",
+      "title": "Quest Accepted",
+      "description": "Complete your first quest",
+      "xp_bonus": 50,
+      "condition": "quests_completed >= 1"
+    },
+    {
+      "id": "streak-3",
+      "title": "On a Roll",
+      "description": "Maintain a 3-day streak",
+      "xp_bonus": 100,
+      "condition": "streak >= 3"
+    },
+    {
+      "id": "streak-7",
+      "title": "Week Warrior",
+      "description": "Maintain a 7-day streak",
+      "xp_bonus": 250,
+      "condition": "streak >= 7"
+    },
+    {
+      "id": "streak-30",
+      "title": "Monthly Master",
+      "description": "Maintain a 30-day streak",
+      "xp_bonus": 1000,
+      "condition": "streak >= 30"
+    },
+    {
+      "id": "all-basics",
+      "title": "Foundation Laid",
+      "description": "Complete all Basics tier quests",
+      "xp_bonus": 200,
+      "condition": "tier_basics_complete"
+    },
+    {
+      "id": "all-workflow",
+      "title": "Workflow Wizard",
+      "description": "Complete all Workflow tier quests",
+      "xp_bonus": 400,
+      "condition": "tier_workflow_complete"
+    },
+    {
+      "id": "all-power",
+      "title": "Power Unlocked",
+      "description": "Complete all Power User tier quests",
+      "xp_bonus": 600,
+      "condition": "tier_power_complete"
+    },
+    {
+      "id": "all-mastery",
+      "title": "Claude Architect",
+      "description": "Complete all Mastery tier quests",
+      "xp_bonus": 1000,
+      "condition": "tier_mastery_complete"
+    },
+    {
+      "id": "first-fork",
+      "title": "Path Splitter",
+      "description": "Fork a conversation for the first time",
+      "xp_bonus": 75,
+      "condition": "quest_fork-conversation_complete"
+    },
+    {
+      "id": "first-plugin",
+      "title": "Extender",
+      "description": "Install your first plugin",
+      "xp_bonus": 100,
+      "condition": "quest_install-plugin_complete"
+    },
+    {
+      "id": "model-explorer",
+      "title": "Model Explorer",
+      "description": "Switch models for the first time",
+      "xp_bonus": 75,
+      "condition": "quest_switch-model_complete"
+    },
+    {
+      "id": "ten-quests",
+      "title": "Double Digits",
+      "description": "Complete 10 quests total",
+      "xp_bonus": 150,
+      "condition": "quests_completed >= 10"
+    },
+    {
+      "id": "all-quests",
+      "title": "Completionist",
+      "description": "Complete every quest in every tier",
+      "xp_bonus": 2000,
+      "condition": "all_quests_complete"
+    },
+    {
+      "id": "speed-run",
+      "title": "Speed Run",
+      "description": "Complete 3 quests in a single session",
+      "xp_bonus": 150,
+      "condition": "session_quests >= 3"
+    }
+  ]
+}

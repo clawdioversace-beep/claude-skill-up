@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "tiers": {
+    "basics": {
+      "label": "Basics",
+      "description": "Essential commands every Claude Code user should know",
+      "quests": [
+        {
+          "id": "clear-session",
+          "command": "/clear",
+          "title": "Fresh Start",
+          "description": "Clear your conversation to start fresh",
+          "xp": 50,
+          "hint": "Type /clear when your context feels cluttered"
+        },
+        {
+          "id": "compact-context",
+          "command": "/compact",
+          "title": "Context Crunch",
+          "description": "Compact your conversation to save context window",
+          "xp": 50,
+          "hint": "Use /compact when the conversation gets long"
+        },
+        {
+          "id": "get-help",
+          "command": "/help",
+          "title": "RTFM",
+          "description": "Open the help menu to see all available commands",
+          "xp": 25,
+          "hint": "Type /help to see what's possible"
+        },
+        {
+          "id": "check-status",
+          "command": "/status",
+          "title": "System Check",
+          "description": "Check your current session status",
+          "xp": 50,
+          "hint": "Type /status to see model, context usage, and more"
+        },
+        {
+          "id": "use-vim-mode",
+          "command": "/vim",
+          "title": "Vim Wizard",
+          "description": "Toggle vim keybindings in the input",
+          "xp": 75,
+          "hint": "Type /vim if you're a vim user"
+        },
+        {
+          "id": "check-cost",
+          "command": "/cost",
+          "title": "Cost Conscious",
+          "description": "Check how much this session has cost",
+          "xp": 50,
+          "hint": "Type /cost to see token usage and estimated cost"
+        }
+      ]
+    },
+    "workflow": {
+      "label": "Workflow",
+      "description": "Commands that level up how you work with Claude",
+      "quests": [
+        {
+          "id": "fork-conversation",
+          "command": "/fork",
+          "title": "Multiverse",
+          "description": "Fork your conversation to explore a different path",
+          "xp": 100,
+          "hint": "Type /fork to branch off without losing your current context"
+        },
+        {
+          "id": "use-memory",
+          "command": "/memory",
+          "title": "Memory Lane",
+          "description": "View or manage Claude's project memory",
+          "xp": 100,
+          "hint": "Type /memory to see what Claude remembers about your project"
+        },
+        {
+          "id": "review-code",
+          "command": "/review",
+          "title": "Code Reviewer",
+          "description": "Ask Claude to review recent changes",
+          "xp": 100,
+          "hint": "Type /review to get a code review of your staged changes"
+        },
+        {
+          "id": "init-project",
+          "command": "/init",
+          "title": "Project Genesis",
+          "description": "Initialize Claude for a new project",
+          "xp": 100,
+          "hint": "Type /init in a new project to set up CLAUDE.md"
+        },
+        {
+          "id": "use-resume",
+          "command": "/resume",
+          "title": "Continue Mission",
+          "description": "Resume a previous conversation",
+          "xp": 75,
+          "hint": "Type /resume to pick up where you left off"
+        },
+        {
+          "id": "switch-model",
+          "command": "/model",
+          "title": "Model Swapper",
+          "description": "Switch between Claude models mid-conversation",
+          "xp": 100,
+          "hint": "Type /model to switch between Haiku, Sonnet, and Opus"
+        }
+      ]
+    },
+    "power": {
+      "label": "Power User",
+      "description": "Advanced features most users never discover",
+      "quests": [
+        {
+          "id": "install-plugin",
+          "command": "/install",
+          "title": "Plugin Hunter",
+          "description": "Install a plugin to extend Claude's capabilities",
+          "xp": 150,
+          "hint": "Type /install to add MCP servers, skills, or plugins"
+        },
+        {
+          "id": "use-permissions",
+          "command": "/permissions",
+          "title": "Gatekeeper",
+          "description": "View or modify tool permissions",
+          "xp": 150,
+          "hint": "Type /permissions to control what Claude can access"
+        },
+        {
+          "id": "use-fast-mode",
+          "command": "/fast",
+          "title": "Speed Demon",
+          "description": "Toggle fast mode for quicker responses",
+          "xp": 100,
+          "hint": "Type /fast to toggle faster output from Claude"
+        },
+        {
+          "id": "use-terminal-mode",
+          "command": "/terminal-setup",
+          "title": "Terminal Tuner",
+          "description": "Configure terminal integration settings",
+          "xp": 150,
+          "hint": "Type /terminal-setup to optimize your terminal for Claude"
+        },
+        {
+          "id": "use-config",
+          "command": "/config",
+          "title": "Config Master",
+          "description": "Open Claude Code configuration",
+          "xp": 125,
+          "hint": "Type /config to customize Claude Code behavior"
+        },
+        {
+          "id": "use-logout",
+          "command": "/logout",
+          "title": "Identity Check",
+          "description": "Check or switch your authentication",
+          "xp": 75,
+          "hint": "Type /logout to manage your Claude authentication"
+        }
+      ]
+    },
+    "mastery": {
+      "label": "Mastery",
+      "description": "You're building on top of Claude Code itself",
+      "quests": [
+        {
+          "id": "create-custom-command",
+          "command": "/commands",
+          "title": "Command Crafter",
+          "description": "Create or manage custom slash commands",
+          "xp": 200,
+          "hint": "Create .claude/commands/ directory with custom prompt files"
+        },
+        {
+          "id": "use-hooks",
+          "command": "hooks",
+          "title": "Hook Master",
+          "description": "Configure hooks that run on Claude Code events",
+          "xp": 250,
+          "hint": "Add hooks to settings.json for SessionStart, UserPromptSubmit, etc."
+        },
+        {
+          "id": "build-mcp-server",
+          "command": "mcp",
+          "title": "Protocol Engineer",
+          "description": "Set up or use an MCP server with Claude Code",
+          "xp": 250,
+          "hint": "MCP servers extend Claude with custom tools and data sources"
+        },
+        {
+          "id": "multi-model-workflow",
+          "command": "multi-model",
+          "title": "Orchestrator",
+          "description": "Use multiple models in a single session (switch 3+ times)",
+          "xp": 200,
+          "hint": "Switch between Haiku (fast/cheap), Sonnet (balanced), Opus (powerful)"
+        },
+        {
+          "id": "publish-skill",
+          "command": "skill-publish",
+          "title": "Skill Publisher",
+          "description": "Create and share your own Claude Code skill",
+          "xp": 300,
+          "hint": "Write a SKILL.md and publish to GitHub for others to use"
+        }
+      ]
+    }
+  }
+}
